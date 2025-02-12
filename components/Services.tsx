@@ -29,7 +29,7 @@ export default function Services() {
     <section className="py-20 text-center" aria-labelledby="service-label">
       <div className="container mx-auto px-4">
         <p className="text-lg text-gray-500 mb-2" id="service-label">What We Do?</p>
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 max-w-2xl mx-auto">
+        <h2 className="text-3xl text-black md:text-4xl font-bold mb-12 max-w-2xl mx-auto">
           The service we offer is specifically designed to meet your needs.
         </h2>
 
@@ -39,7 +39,7 @@ export default function Services() {
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto text-white mb-6">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
+              <h3 className="text-xl text-black font-semibold mb-4">{service.title}</h3>
               <p className="text-gray-600 mb-6">{service.description}</p>
               <a href="#" className="flex items-center justify-center gap-2 text-blue-600 font-semibold hover:opacity-90 transition-opacity">
                 <span>Learn More</span>
