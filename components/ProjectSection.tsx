@@ -30,7 +30,7 @@ const ProjectsSection = () => {
             Case Studies
           </p>
           
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 max-w-2xl mx-auto text-gray-900">
             Check out some of our awesome projects with creative ideas and great design.
           </h2>
   
@@ -49,7 +49,7 @@ const ProjectsSection = () => {
   
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-2 hover:text-violet-blue transition-colors">
-                      <a href="#" className="focus:outline-none focus:ring-2 focus:ring-violet-blue">
+                      <a href="#" className="focus:outline-none focus:ring-2 focus:ring-violet-blue text-gray-900">
                         {project.title}
                       </a>
                     </h3>
@@ -57,7 +57,7 @@ const ProjectsSection = () => {
                     <p className="text-gray-600 mb-4">{project.text}</p>
   
                     <ul className="flex flex-wrap gap-3 text-sm text-cadet-blue">
-                      <li className="flex items-center gap-1">
+                      <li className="flex items-center gap-1 text-gray-900">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="h-4 w-4"
@@ -68,7 +68,7 @@ const ProjectsSection = () => {
                             d="M424 64h-40V24c0-4.4-3.6-8-8-8h-24c-4.4 0-8 3.6-8 8v40H168V24c0-4.4-3.6-8-8-8h-24c-4.4 0-8 3.6-8 8v40H88c-22.1 0-40 17.9-40 40v352c0 22.1 17.9 40 40 40h336c22.1 0 40-17.9 40-40V104c0-22.1-17.9-40-40-40zm-12 388H100c-6.6 0-12-5.4-12-12V192h352v248c0 6.6-5.4 12-12 12z"
                           />
                         </svg>
-                        <time dateTime={project.date}>
+                        <time dateTime={project.date} className="text-gray-900">
                           {new Date(project.date).toLocaleDateString('en-US', {
                             year: 'numeric',
                             month: 'short',
@@ -77,7 +77,7 @@ const ProjectsSection = () => {
                         </time>
                       </li>
                       
-                      <li className="flex items-center gap-1">
+                      <li className="flex items-center gap-1 text-gray-900">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="h-4 w-4"
@@ -88,7 +88,7 @@ const ProjectsSection = () => {
                             d="M448 368V96c0-35.3-28.7-64-64-64H128c-35.3 0-64 28.7-64 64v272c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64zM128 64h256c17.6 0 32 14.4 32 32v224H96V96c0-17.6 14.4-32 32-32zm256 384H128c-17.6 0-32-14.4-32-32v-16h320v16c0 17.6-14.4 32-32 32z"
                           />
                         </svg>
-                        <span>{project.category}</span>
+                        <span className="text-gray-900">{project.category}</span>
                       </li>
                     </ul>
                   </div>
