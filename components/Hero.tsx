@@ -183,7 +183,7 @@ const Hero = () => {
   const slides = [
     
     { image: 'https://i.pinimg.com/736x/bb/74/ee/bb74eeb1fdeab54ae029d19ca30bfc0d.jpg', hasPlayButton: false },
-    { image: 'https://i.pinimg.com/736x/40/ec/49/40ec494e0006d519f737ff90f735512f.jpg', hasPlayButton: true },
+    { image: 'https://i.pinimg.com/736x/40/ec/49/40ec494e0006d519f737ff90f735512f.jpg', hasPlayButton: false },
     { image: 'https://i.pinimg.com/736x/7f/85/1e/7f851ea18f901194d8511dd2fef39773.jpg', hasPlayButton: false },
   ];
 

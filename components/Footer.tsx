@@ -72,7 +72,7 @@ const Footer = () => {
           <Link href="/" className="text-white text-3xl font-bold">
             Malex Chemical Supplies
           </Link>
-          <p className="mt-4">&copy; 2024 Malex. All rights reserved.</p>
+          <p className="mt-4">&copy; 2025 Malex. All rights reserved.</p>
           <div className="flex space-x-4 mt-4">
             <FaFacebookF className="text-white cursor-pointer hover:text-blue-500" />
             <FaTwitter className="text-white cursor-pointer hover:text-blue-400" />
@@ -87,10 +87,10 @@ const Footer = () => {
           <h4 className="text-white text-lg mb-4">Get in Touch</h4>
           <p className="mb-2">4th Floor Rm 7 Ridge House, Munyu Rd, Nairobi-Kenya</p>
           <p className="mb-2">P.O Box 40, 10129 Nairobi-Kenya</p>
-          <Link href="mailto:info@email.com" className="block hover:text-blue-400">sales@malexchemsupplies.com</Link>
-          <Link href="mailto:info@email.com" className="block hover:text-blue-400">alex@malexchemsupplies.com</Link>
-          <Link href="tel:001234567890" className="block hover:text-blue-400">+(254)7 185 486 95</Link>
-          <Link href="tel:001234567890" className="block hover:text-blue-400">+(254)7 021 152 77</Link>
+          <Link href="sales@malexchemsupplies.com" className="block hover:text-blue-400">sales@malexchemsupplies.com</Link>
+          <Link href="alex@malexchemsupplies.com" className="block hover:text-blue-400 mb-4">alex@malexchemsupplies.com</Link>
+          <Link href="tel:001234567890" className="block hover:text-blue-400 text-lg">+(254)7 185 486 95</Link>
+          <Link href="tel:001234567890" className="block hover:text-blue-400 text-lg">+(254)7 021 152 77</Link>
         </div>
 
         {/* Newsletter Section */}

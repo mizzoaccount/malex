@@ -668,7 +668,7 @@ export default function Header() {
           className="hidden lg:flex items-center gap-2 bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-gray-200 transition-colors mx-3"
         >
           <Shield size={18} /> Admin
-        </Link>;
+        </Link>
       </div>
        {/* Mobile Menu Button */}
         <button
@@ -716,10 +716,10 @@ export default function Header() {
 
         <div className="space-y-2">
           <a href="mailto:info@email.com" className="block hover:text-blue-400 transition-colors">
-            info@email.com
+          sales@malexchemsupplies.com
           </a>
           <a href="tel:001234567890" className="block hover:text-blue-400 transition-colors">
-            00 (123) 456 78 90
+          +(254)7 185 486 95
           </a>
         </div>
 
