@@ -1,5 +1,5 @@
 
-To implement the sticky behavior you're describing, you'll need to add some CSS styles to make the CategoryList component sticky while allowing the ProductList to continue scrolling. Here's how we can do that:
+/*To implement the sticky behavior you're describing, you'll need to add some CSS styles to make the CategoryList component sticky while allowing the ProductList to continue scrolling. Here's how we can do that:
 
 Make the CategoryList sticky by adding position: sticky and top: 0.
 Ensure the ProductList continues scrolling until it reaches the bottom, so the CategoryList only becomes sticky when it reaches the top of the viewport.
@@ -62,12 +62,12 @@ import ProductList from "./ProductList"; // Assume you have this component
 const PageLayout: React.FC = () => {
   return (
     <div className="flex">
-      {/* Category List */}
+      {/* Category List *
       <div className="w-1/4">
         <CategoryList />
       </div>
 
-      {/* Product List */}
+      {/* Product List *
       <div className="w-3/4 overflow-y-auto">
         <ProductList />
       </div>
@@ -415,5 +415,5 @@ Styling: Use utility-first CSS (Tailwind) or styled components for better UI con
 TypeScript: Use TypeScript to ensure type safety across your components.
 Composition: Combine smaller components to create more complex UI elements.
 By adhering to these best practices, your React components will become easy to manage, scalable, and more maintainable over time. You'll also see significant improvements in your development speed and code quality!
-
+*/
 
