@@ -69,10 +69,10 @@ const Footer = () => {
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
         {/* Brand Section */}
         <div>
-          <Link href="/">
-            <Image src="/logo-light.svg" width={74} height={24} alt="Adex Home" />
+          <Link href="/" className="text-white text-3xl font-bold">
+            Malex Chemical Supplies
           </Link>
-          <p className="mt-4">&copy; 2024 Shaddyna. All rights reserved.</p>
+          <p className="mt-4">&copy; 2024 Malex. All rights reserved.</p>
           <div className="flex space-x-4 mt-4">
             <FaFacebookF className="text-white cursor-pointer hover:text-blue-500" />
             <FaTwitter className="text-white cursor-pointer hover:text-blue-400" />
@@ -85,9 +85,12 @@ const Footer = () => {
         {/* Contact Section */}
         <div>
           <h4 className="text-white text-lg mb-4">Get in Touch</h4>
-          <p className="mb-2">Moonshine St. 14/05 Light City, London, United Kingdom</p>
-          <Link href="mailto:info@email.com" className="block hover:text-blue-400">info@email.com</Link>
-          <Link href="tel:001234567890" className="block hover:text-blue-400">00 (123) 456 78 90</Link>
+          <p className="mb-2">4th Floor Rm 7 Ridge House, Munyu Rd, Nairobi-Kenya</p>
+          <p className="mb-2">P.O Box 40, 10129 Nairobi-Kenya</p>
+          <Link href="mailto:info@email.com" className="block hover:text-blue-400">sales@malexchemsupplies.com</Link>
+          <Link href="mailto:info@email.com" className="block hover:text-blue-400">alex@malexchemsupplies.com</Link>
+          <Link href="tel:001234567890" className="block hover:text-blue-400">+(254)7 185 486 95</Link>
+          <Link href="tel:001234567890" className="block hover:text-blue-400">+(254)7 021 152 77</Link>
         </div>
 
         {/* Newsletter Section */}
