@@ -19,7 +19,7 @@ import CTASection from "@/components/CtaSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="bg-gray-50 min-h-screen flex flex-col">
       <Header />
     <Hero />
     <Services />
