@@ -26,10 +26,10 @@ export default function Services() {
   ];
 
   return (
-    <section className="py-20 text-center" aria-labelledby="service-label">
+    <section className="py-8 text-center" aria-labelledby="service-label">
       <div className="container mx-auto px-4">
         <p className="text-lg text-gray-500 mb-2" id="service-label">What We Do?</p>
-        <h2 className="text-3xl text-gray-900 md:text-4xl font-bold mb-12 max-w-2xl mx-auto">
+        <h2 className="text-3xl text-gray-900 md:text-3xl font-bold mb-12 max-w-2xl mx-auto">
           The service we offer is specifically designed to meet your needs.
         </h2>
 

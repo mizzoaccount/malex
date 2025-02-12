@@ -10,9 +10,9 @@ const FeatureSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50" aria-labelledby="feature-label">
+    <section className="py-4 bg-gray-50" aria-labelledby="feature-label">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
           {/* Text Content on the Left */}
           <div className="lg:pr-12 text-center lg:text-left order-first lg:order-none">
             <p className="text-blue-600 font-medium mb-4" id="feature-label">

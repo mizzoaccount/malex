@@ -24,7 +24,7 @@ const ProjectsSection = () => {
     ];
   
     return (
-      <section className="bg-cultured py-16" aria-labelledby="project-label">
+      <section className="bg-cultured py-4" aria-labelledby="project-label">
         <div className="container mx-auto px-4">
           <p className="text-center text-lg font-medium text-gray-600 mb-4" id="project-label">
             Case Studies
