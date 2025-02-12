@@ -6,22 +6,22 @@ export default function Services() {
     {
       icon: <IoCallOutline className="text-4xl" />,
       title: "24/7 Support",
-      description: "Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo."
+      description: "Round-the-clock expert assistance to resolve queries and ensure seamless chemical supply operations anytime, anywhere."
     },
     {
       icon: <IoShieldCheckmarkOutline className="text-4xl" />,
       title: "Secure Payments",
-      description: "Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo."
+      description: "Trusted and encrypted payment systems for safe, hassle-free transactions every time you order."
     },
     {
       icon: <IoCloudDownloadOutline className="text-4xl" />,
       title: "Daily Updates",
-      description: "Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo."
+      description: "Real-time tracking and updates on orders, deliveries, and inventory to keep you informed and prepared."
     },
     {
       icon: <IoPieChartOutline className="text-4xl" />,
       title: "Market Research",
-      description: "Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo."
+      description: " In-depth industry insights and trends to help you make informed decisions and stay ahead in the chemical market."
     }
   ];
 

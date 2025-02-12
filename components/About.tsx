@@ -9,15 +9,15 @@ const AboutSection = () => {
   const accordionItems = [
     {
       title: 'Professional Design',
-      content: 'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel.'
+      content: 'Our chemical solutions are backed by a professional design approach, ensuring precision, reliability, and innovation in every product. We prioritize quality and efficiency to meet the unique needs of industries ranging from manufacturing to research, delivering tailored solutions that exceed expectations.'
     },
     {
       title: 'Top-Notch Support',
-      content: 'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel.'
+      content: 'We provide unparalleled customer support, offering expert guidance and technical assistance at every step. Our dedicated team is available always to address inquiries, troubleshoot issues, and ensure seamless integration of our chemicals into your processes.'
     },
     {
-      title: 'Exclusive Assets',
-      content: 'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel.'
+      title: 'Exclusive Products',
+      content: 'Discover our range of exclusive, high-performance chemical products designed to set your business apart. Sourced and developed with cutting-edge technology, these solutions offer unmatched quality, consistency, and effectiveness for specialized applications.'
     }
   ];
 

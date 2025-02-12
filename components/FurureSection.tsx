@@ -3,10 +3,10 @@ import { CheckIcon } from '@heroicons/react/24/outline';
 
 const FeatureSection = () => {
   const features = [
-    'Aenean quam ornare. Curabitur blandit.',
-    'Nullam quis risus eget urna mollis ornare.',
-    'Etiam porta euismod malesuada mollis.',
-    'Vivamus sagittis lacus vel augue rutrum.'
+    "Simplified chemical procurement process.",
+    "Transparent and competitive pricing.",
+    "Tailored supply chain solutions.",
+    "Stress-free spending experience."
   ];
 
   return (
@@ -22,8 +22,7 @@ const FeatureSection = () => {
               We make your spending stress-free for you to have the perfect control.
             </h2>
             <p className="text-gray-600 mb-8">
-              Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-              Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus.
+            We simplify your chemical procurement with seamless processes, transparent pricing, and tailored solutions, ensuring stress-free spending and complete control over your supply chain.
             </p>
 
             <ul className="grid grid-cols-1 gap-4">

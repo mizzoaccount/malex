@@ -663,12 +663,12 @@ export default function Header() {
         <a href="#" className="hidden lg:flex items-center gap-2 bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-gray-200 transition-colors">
           <UserPlus size={18} /> Register
         </a>
-        <Link
+        {/*<Link
           href="/admin"
           className="hidden lg:flex items-center gap-2 bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-gray-200 transition-colors mx-3"
         >
           <Shield size={18} /> Admin
-        </Link>
+        </Link>*/}
       </div>
        {/* Mobile Menu Button */}
         <button
