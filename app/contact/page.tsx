@@ -182,23 +182,23 @@ export default function ContactPage() {
           {/* Right - FAQ List */}
           <div className="space-y-4">
             <details className="border-b border-gray-200 py-4">
-              <summary className="text-lg font-semibold cursor-pointer">What chemicals do you supply?</summary>
+              <summary className="text-lg text-gray-600 font-semibold cursor-pointer">What chemicals do you supply?</summary>
               <p className="text-gray-600 mt-2">We supply a wide range of industrial and laboratory chemicals, including solvents, acids, and specialty compounds.</p>
             </details>
             <details className="border-b border-gray-200 py-4">
-              <summary className="text-lg font-semibold cursor-pointer">Are your chemicals safe for use?</summary>
+              <summary className="text-lg text-gray-600 font-semibold cursor-pointer">Are your chemicals safe for use?</summary>
               <p className="text-gray-600 mt-2">Yes, all our chemicals comply with safety regulations, and we provide proper handling guidelines.</p>
             </details>
             <details className="border-b border-gray-200 py-4">
-              <summary className="text-lg font-semibold cursor-pointer">Do you offer bulk purchasing options?</summary>
+              <summary className="text-lg text-gray-600 font-semibold cursor-pointer">Do you offer bulk purchasing options?</summary>
               <p className="text-gray-600 mt-2">Yes, we offer bulk pricing and discounts for large orders.</p>
             </details>
             <details className="border-b border-gray-200 py-4">
-              <summary className="text-lg font-semibold cursor-pointer">How do you ensure product quality?</summary>
+              <summary className="text-lg text-gray-600 font-semibold cursor-pointer">How do you ensure product quality?</summary>
               <p className="text-gray-600 mt-2">We source from reputable manufacturers and conduct thorough quality checks.</p>
             </details>
             <details className="border-b border-gray-200 py-4">
-              <summary className="text-lg font-semibold cursor-pointer">Can I get a consultation before purchasing?</summary>
+              <summary className="text-lg text-gray-600 font-semibold cursor-pointer">Can I get a consultation before purchasing?</summary>
               <p className="text-gray-600 mt-2">Absolutely! Our experts are available to guide you on the best chemical solutions for your needs.</p>
             </details>
           </div>

@@ -100,7 +100,7 @@ export default function Header() {
           <IoCloseOutline />
         </button>
       </div>
-        <ul className="flex flex-col gap-4 flex-grow">
+        <ul className="flex flex-col text-white gap-4 flex-grow">
           {navLinks.map((link) => (
             <li key={link}>
                  <Link key={link} href={`/${link.toLowerCase()}`} className={`${isHeaderFixed ? 'text-black' : 'text-white'} hover:text-blue-600 transition-colors`}>
