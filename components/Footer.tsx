@@ -60,7 +60,6 @@ export default Footer;*/
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { FaFacebookF, FaTwitter, FaDribbble, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {

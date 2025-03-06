@@ -102,18 +102,18 @@ export default function ContactPage() {
   }
   */
 
-  import Footer from "@/components/Footer";
+import Footer from "@/components/Footer";
 import HeaderTwo from "@/components/HeaderTwo";
 
 export default function ContactPage() {
     return (
         <div>
             <HeaderTwo />
-      <section className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8 mt-12">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white shadow-lg rounded-lg p-8">
+      <section className="min-h-screen bg-gray-100 py-12 px-3 sm:px-6 lg:px-8 mt-8">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white shadow-lg rounded-lg p-3">
           {/* Left Section */}
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Contact Us</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">Contact Us</h2>
             <p className="text-gray-600 mb-4">Reach out to us through any of the options below.</p>
             
             <div className="mb-6">
@@ -139,7 +139,7 @@ export default function ContactPage() {
           </div>
   
           {/* Right Section - Contact Form */}
-          <div className="bg-gray-50 p-6 rounded-lg shadow-md">
+          <div className="bg-gray-50 p-3 rounded-lg shadow-md">
             <h3 className="text-2xl font-semibold text-gray-900 mb-6">Get in Touch</h3>
             <form className="space-y-4">
               <input type="text" placeholder="Your Name" className="w-full p-3 border rounded-md focus:ring-2 focus:ring-blue-600" />
@@ -151,7 +151,7 @@ export default function ContactPage() {
         </div>
   
         {/* Location Section */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-3 bg-white shadow-lg rounded-lg p-8 mt-12">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-3 bg-white shadow-lg rounded-lg p-3 mt-3">
           {/* Left - Map */}
           <div className="w-full h-[400px] lg:h-[550px]">
             <iframe
@@ -174,7 +174,7 @@ export default function ContactPage() {
           </div>
         </div>
         {/* FAQ Section */}
-        <div className="max-w-6xl mx-auto bg-white shadow-lg rounded-lg p-8 mt-12 grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="max-w-6xl mx-auto bg-white shadow-lg rounded-lg p-3 mt-3 grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Left - FAQ Title */}
           <div className="flex items-center">
             <h3 className="text-3xl font-bold text-gray-900">Do you have any Questions for us?</h3>
