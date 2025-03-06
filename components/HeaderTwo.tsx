@@ -7,7 +7,7 @@ import { UserPlus, Shield } from "lucide-react";
 import Link from "next/link";
 
 
-export default function Header() {
+export default function HeaderTwo() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isHeaderFixed, setIsHeaderFixed] = useState(false);
 
@@ -29,10 +29,10 @@ export default function Header() {
     { icon: <IoLogoYoutube />, url: '#' },
   ];
 
-  const navLinks = [ 'About', 'Products','Catalogue', 'Contact'];
+  const navLinks = ['About', 'Products','Catalogue', 'Contact'];
 
   return (
-    <header className={`${isHeaderFixed ? 'fixed bg-white shadow-md animate-slideIn' : 'absolute'} w-full top-0 z-40 transition-all`}>
+    <header className={`${isHeaderFixed ? 'fixed bg-white shadow-md animate-slideIn' : 'absolute bg-[#447bfe]'} w-full top-0 z-40 transition-all`}>
       <div className="container mx-auto px-4 flex justify-between items-center py-4">
         {/* Logo */}
         {/*<a href="#">
@@ -53,10 +53,9 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex gap-6 ml-auto mr-8">
           {navLinks.map((link) => (
-           <Link key={link} href={`/${link.toLowerCase()}`} className={`${isHeaderFixed ? 'text-black' : 'text-white'} hover:text-blue-600 transition-colors`}>
-           {link}
-         </Link>
-         
+               <Link key={link} href={`/${link.toLowerCase()}`} className={`${isHeaderFixed ? 'text-black' : 'text-white'} hover:text-blue-600 transition-colors`}>
+               {link}
+             </Link>
           ))}
         </nav>
 
@@ -90,6 +89,12 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       <nav className={`fixed top-0 left-0 w-72 h-screen bg-gray-800 text-white p-8 flex flex-col gap-8 z-50 transform transition-transform ${isNavOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+       {/*<div className="flex justify-between items-center">
+          <Image src="https://raw.githubusercontent.com/codewithsadee/adex/9cb717198b2bf09bcb585c29328d1f9e4b61f2ba/assets/images/logo-light.svg" width={74} height={24} alt="Adex home" />
+          <button onClick={toggleNav} className="text-2xl bg-white bg-opacity-10 p-2 rounded-full hover:bg-opacity-20 transition-colors" aria-label="close menu">
+            <IoCloseOutline />
+          </button>
+        </div>*/}
         <div className="flex justify-between items-center">
         <span className="text-xl font-bold text-white">Malex</span>
         <button
@@ -103,7 +108,7 @@ export default function Header() {
         <ul className="flex flex-col gap-4 flex-grow">
           {navLinks.map((link) => (
             <li key={link}>
-                 <Link key={link} href={`/${link.toLowerCase()}`} className={`${isHeaderFixed ? 'text-black' : 'text-white'} hover:text-blue-600 transition-colors`}>
+                <Link key={link} href={`/${link.toLowerCase()}`} className={`${isHeaderFixed ? 'text-black' : 'text-white'} hover:text-blue-600 transition-colors`}>
            {link}
          </Link>
             </li>

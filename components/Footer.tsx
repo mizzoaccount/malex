@@ -85,7 +85,7 @@ const Footer = () => {
         {/* Contact Section */}
         <div>
           <h4 className="text-white text-lg mb-4">Get in Touch</h4>
-          <p className="mb-2">4th Floor Rm 7 Ridge House, Munyu Rd, Nairobi-Kenya</p>
+          <p className="mb-2">5th Floor Green Court Building, Latema Rd, Nairobi-Kenya</p>
           <p className="mb-2">P.O Box 40, 10129 Nairobi-Kenya</p>
           <Link href="sales@malexchemsupplies.com" className="block hover:text-blue-400">sales@malexchemsupplies.com</Link>
           <Link href="alex@malexchemsupplies.com" className="block hover:text-blue-400 mb-4">alex@malexchemsupplies.com</Link>

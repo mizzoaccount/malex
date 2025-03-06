@@ -26,7 +26,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="py-4" aria-labelledby="about-label">
+    <section className="py-2" aria-labelledby="about-label">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <figure className="w-full">
