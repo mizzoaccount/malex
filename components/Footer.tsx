@@ -88,8 +88,8 @@ const Footer = () => {
           <p className="mb-2">P.O Box 40, 10129 Nairobi-Kenya</p>
           <Link href="sales@malexchemsupplies.com" className="block hover:text-blue-400">sales@malexchemsupplies.com</Link>
           <Link href="alex@malexchemsupplies.com" className="block hover:text-blue-400 mb-4">alex@malexchemsupplies.com</Link>
-          <Link href="tel:+254718548695" className="block hover:text-blue-400 text-lg">+(254)7 185 486 95</Link>
-          <Link href="tel:+254702115277" className="block hover:text-blue-400 text-lg">+(254)7 021 152 77</Link>
+          <Link href="tel:+254718548695" className="block hover:text-blue-400 text-lg">+254 (0)7 185 486 95</Link>
+          <Link href="tel:+254702115277" className="block hover:text-blue-400 text-lg">+254 (0)7 021 152 77</Link>
         </div>
 
         {/* Newsletter Section */}
