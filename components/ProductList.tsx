@@ -73,8 +73,38 @@ const ProductList: React.FC = () => {
 
     fetchProducts();
   }, []);
-
   return (
+    <div className="flex justify-center p-4">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 
+        gap-3 sm:gap-4 md:gap-6 w-full max-w-7xl mx-auto">
+        
+        {products.map((product) => (
+          <div key={product.id} className="bg-white shadow-md rounded-lg p-3 w-full max-w-xs mx-auto">
+            <div className="rounded-lg overflow-hidden">
+              <img
+                src={product.image || "/assets/images/no-images.png"}
+                alt={product.name}
+                className="w-full h-48 sm:h-52 md:h-64 object-cover"
+              />
+            </div>
+            <div className="mt-2 sm:mt-3">
+              <h3 className="text-sm text-gray-600 font-bold truncate">{product.name}</h3>
+              <p className="text-green-600 font-semibold">Ksh: {product.price}</p>
+              <p className="text-gray-500 text-sm">Stock: {product.stock}</p>
+            </div>
+            <button
+              onClick={() => router.push(`/product/${product.id}`)}
+              className="w-full mt-2 sm:mt-3 py-2 border border-blue-500 text-blue-500 rounded-md hover:bg-blue-500 hover:text-white transition"
+            >
+              View Details
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+  
+  /*return (
     <div className="flex justify-center p-4">
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 w-full max-w-7xl mx-auto">
         {products.map((product) => (
@@ -87,7 +117,7 @@ const ProductList: React.FC = () => {
               />
             </div>
             <div className="mt-3">
-              <h3 className="text-sm font-bold truncate">{product.name}</h3>
+              <h3 className="text-sm text-gray-600 font-bold truncate">{product.name}</h3>
               <p className="text-green-600 font-semibold">Ksh: {product.price}</p>
               <p className="text-gray-500 text-sm">Stock: {product.stock}</p>
             </div>
@@ -101,7 +131,7 @@ const ProductList: React.FC = () => {
         ))}
       </div>
     </div>
-  );
+  );*/
 };
 
 export default ProductList;

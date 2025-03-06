@@ -44,7 +44,7 @@ const ProductDetail: React.FC = () => {
   }
 
   return (
-    <div>
+    <div className="bg-white">
     <HeaderTwo />
     <div className="flex flex-col min-h-screen md:flex-row items-center md:items-start p-3 max-w-4xl mx-auto mt-20 gap-6">
       {/* Left Side - Image & Product Info */}
