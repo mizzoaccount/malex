@@ -27,7 +27,7 @@ const ProductDetail: React.FC = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/api/products/${id}`);
+        const response = await fetch(`https://malex-backend.onrender.com/api/products/${id}`);
         if (!response.ok) throw new Error("Product not found");
         const data = await response.json();
         setProduct(data);
