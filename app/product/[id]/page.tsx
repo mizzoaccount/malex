@@ -40,7 +40,7 @@ const ProductDetail: React.FC = () => {
   }, [id]);
 
   if (!product) {
-    return <p className="text-center text-gray-600">Loading product details...</p>;
+    return <p className="bg-white text-center text-gray-600">Loading product details...</p>;
   }
   return (
     <div className="bg-white min-h-screen">
@@ -54,7 +54,7 @@ const ProductDetail: React.FC = () => {
             className="w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] lg:w-[450px] lg:h-[450px] rounded-lg shadow-md object-cover"
           />
           {/* Product Details */}
-          <div className="mt-4 p-4 md:p-5 bg-white shadow-md rounded-lg text-center md:text-left border border-gray-200 w-full max-w-sm sm:max-w-md md:max-w-lg">
+          <div className="mt-4 p-4 md:p-3 bg-white shadow-md rounded-lg text-center md:text-left border border-gray-200 w-full max-w-sm sm:max-w-md md:max-w-lg">
             <h1 className="text-lg font-bold text-gray-900 leading-snug">{product.name}</h1>
             <p className="text-base font-medium text-gray-500 mt-1">{product.category || "Uncategorized"}</p>
   
@@ -77,7 +77,7 @@ const ProductDetail: React.FC = () => {
         </div>
   
         {/* Right Side - Action Buttons */}
-        <div className="flex-1 flex flex-col space-y-3 sm:space-y-4 w-full max-w-sm sm:max-w-md">
+        <div className="flex-1 flex flex-col space-y-3 sm:space-y-3 w-full max-w-sm sm:max-w-md">
           {/* Cart & Wishlist in One Card */}
           <div className="p-3 sm:p-4 bg-white shadow-md border border-gray-200 rounded-md flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-3">
             <button className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-3 border border-[#447cfe] text-[#447cfe] font-semibold rounded-md w-full transition hover:bg-[#447cfe] hover:text-white">
@@ -120,7 +120,7 @@ const ProductDetail: React.FC = () => {
               <li>Handle with care to avoid damage.</li>
               <li>Follow usage instructions for optimal performance.</li>
               <li>Keep out of reach of children if applicable.</li>
-              <li>Contact the seller for any product inquiries.</li>
+              <li>Contact malex for any product inquiries.</li>
             </ul>
           </div>
   
