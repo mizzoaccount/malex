@@ -105,7 +105,7 @@ const ProductDetail: React.FC = () => {
           <div className="p-3 sm:p-4 bg-white shadow-md border border-gray-200 rounded-md">
             <button
               className="flex items-center justify-center gap-2 w-full px-3 py-2 sm:px-4 sm:py-3 border border-green-600 text-green-600 font-semibold rounded-md transition hover:bg-green-600 hover:text-white"
-              onClick={() => window.location.href = `https://wa.me/${product.sellerPhone || ""}`}
+              onClick={() => window.location.href = `https://wa.me/${product.sellerPhone || "+254718548695"}`}
             >
               <FaWhatsapp className="text-lg sm:text-xl" />
               Chat on WhatsApp
