@@ -11,13 +11,18 @@ export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isHeaderFixed, setIsHeaderFixed] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsHeaderFixed(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    useEffect(() => {
+      if (isNavOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    
+      return () => {
+        document.body.style.overflow = '';
+      };
+    }, [isNavOpen]);
+  
 
   const toggleNav = () => setIsNavOpen(!isNavOpen);
 
@@ -34,17 +39,6 @@ export default function Header() {
   return (
     <header className={`${isHeaderFixed ? 'fixed bg-white shadow-md animate-slideIn' : 'absolute'} w-full top-0 z-40 transition-all`}>
       <div className="container mx-auto px-4 flex justify-between items-center py-4">
-        {/* Logo */}
-        {/*<a href="#">
-          <Image
-            src={isHeaderFixed ? 
-              "https://raw.githubusercontent.com/codewithsadee/adex/9cb717198b2bf09bcb585c29328d1f9e4b61f2ba/assets/images/logo-dark.svg" :
-              "https://raw.githubusercontent.com/codewithsadee/adex/9cb717198b2bf09bcb585c29328d1f9e4b61f2ba/assets/images/logo-light.svg"}
-            width={74}
-            height={24}
-            alt="Adex home"
-          />
-        </a>*/}
         <a href="/">
           <span style={{ fontFamily: 'Arial', fontSize: '1.5rem', fontWeight: 'bold', color: isHeaderFixed ? '#333' : '#fff' }}>
             Malex
@@ -65,12 +59,7 @@ export default function Header() {
         <a href="#" className="hidden lg:flex items-center gap-2 bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-gray-200 transition-colors">
           <UserPlus size={18} /> Register
         </a>
-        {/*<Link
-          href="/admin"
-          className="hidden lg:flex items-center gap-2 bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-gray-200 transition-colors mx-3"
-        >
-          <Shield size={18} /> Admin
-        </Link>*/}
+       
       </div>
        {/* Mobile Menu Button */}
         <button
@@ -103,19 +92,25 @@ export default function Header() {
         <ul className="flex flex-col text-white gap-4 flex-grow">
           {navLinks.map((link) => (
             <li key={link}>
-                 <Link key={link} href={`/${link.toLowerCase()}`} className={`${isHeaderFixed ? 'text-black' : 'text-white'} hover:text-blue-600 transition-colors`}>
-           {link}
-         </Link>
+          <Link key={link} href={`/${link.toLowerCase()}`} className="text-white hover:text-blue-600 transition-colors">
+            {link}
+          </Link>
             </li>
           ))}
         </ul>
 
         <div className="space-y-2">
-          <a href="mailto:info@email.com" className="block hover:text-blue-400 transition-colors">
+          <a href="alex@malexchemsupplies.com" className="block hover:text-blue-400 transition-colors">
+          alex@malexchemsupplies.com
+          </a>
+          <a href="sales@malexchemsupplies.com" className="block hover:text-blue-400 transition-colors">
           sales@malexchemsupplies.com
           </a>
-          <a href="tel:001234567890" className="block hover:text-blue-400 transition-colors">
+          <a href="tel:+2547 185 486 95" className="block hover:text-blue-400 transition-colors">
           +(254)7 185 486 95
+          </a>
+          <a href="tel:+2547 021 152 77" className="block hover:text-blue-400 transition-colors">
+          +(254)7 021 152 77
           </a>
         </div>
 

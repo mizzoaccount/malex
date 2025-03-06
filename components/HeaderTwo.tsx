@@ -11,13 +11,26 @@ export default function HeaderTwo() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isHeaderFixed, setIsHeaderFixed] = useState(false);
 
-  useEffect(() => {
+  /*useEffect(() => {
     const handleScroll = () => {
       setIsHeaderFixed(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, []);*/
+
+  useEffect(() => {
+    if (isNavOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isNavOpen]);
+  
 
   const toggleNav = () => setIsNavOpen(!isNavOpen);
 
@@ -108,19 +121,26 @@ export default function HeaderTwo() {
         <ul className="flex flex-col text-white gap-4 flex-grow">
           {navLinks.map((link) => (
             <li key={link}>
-                <Link key={link} href={`/${link.toLowerCase()}`} className={`${isHeaderFixed ? 'text-black' : 'text-white'} hover:text-blue-600 transition-colors`}>
-           {link}
-         </Link>
+               <Link key={link} href={`/${link.toLowerCase()}`} className="text-white hover:text-blue-600 transition-colors">
+  {link}
+</Link>
+
             </li>
           ))}
         </ul>
 
         <div className="space-y-2">
-          <a href="mailto:info@email.com" className="block hover:text-blue-400 transition-colors">
+          <a href="alex@malexchemsupplies.com" className="block hover:text-blue-400 transition-colors">
+          alex@malexchemsupplies.com
+          </a>
+          <a href="sales@malexchemsupplies.com" className="block hover:text-blue-400 transition-colors">
           sales@malexchemsupplies.com
           </a>
-          <a href="tel:001234567890" className="block hover:text-blue-400 transition-colors">
+          <a href="tel:+2547 185 486 95" className="block hover:text-blue-400 transition-colors">
           +(254)7 185 486 95
+          </a>
+          <a href="tel:+2547 021 152 77" className="block hover:text-blue-400 transition-colors">
+          +(254)7 021 152 77
           </a>
         </div>
 
