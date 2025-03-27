@@ -13,11 +13,15 @@
     "@ionic/react": "^8.4.3",
     "autoprefixer": "^10.4.20",
     "axios": "^1.7.9",
+    "framer-motion": "^12.6.2",
+    "gasp": "^0.0.2",
+    "gsap": "^3.12.7",
     "lucide-react": "^0.475.0",
     "next": "15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-icons": "^5.4.0"
+    "react-icons": "^5.4.0",
+    "react-intersection-observer": "^9.16.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

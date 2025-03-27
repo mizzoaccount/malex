@@ -103,12 +103,11 @@ export default function ContactPage() {
   */
 
 import Footer from "@/components/Footer";
-import HeaderTwo from "@/components/HeaderTwo";
+//import HeaderTwo from "@/components/HeaderTwo";
 
 export default function ContactPage() {
     return (
         <div>
-            <HeaderTwo />
       <section className="min-h-screen bg-gray-100 py-12 px-3 sm:px-6 lg:px-8 mt-8">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white shadow-lg rounded-lg p-3">
           {/* Left Section */}

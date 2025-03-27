@@ -1,113 +1,175 @@
-/*import React from 'react';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+"use client";
 
-const Footer: React.FC = () => {
-  return (
-    <footer className="bg-gray-800 text-white py-8">
-      <div className="max-w-screen-xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {/* Section 1: Links *
-        <div>
-          <h3 className="font-semibold text-xl mb-4">Quick Links</h3>
-          <ul className="space-y-2">
-            <li><a href="/about" className="hover:text-gray-400">About Us</a></li>
-            <li><a href="/privacy-policy" className="hover:text-gray-400">Privacy Policy</a></li>
-            <li><a href="/terms" className="hover:text-gray-400">Terms of Service</a></li>
-            <li><a href="/contact" className="hover:text-gray-400">Contact</a></li>
-          </ul>
-        </div>
-
-        {/* Section 2: Social Media Links *
-        <div>
-          <h3 className="font-semibold text-xl mb-4">Follow Us</h3>
-          <div className="flex space-x-4">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              <FaFacebook className="text-2xl hover:text-gray-400" />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <FaTwitter className="text-2xl hover:text-gray-400" />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-              <FaInstagram className="text-2xl hover:text-gray-400" />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin className="text-2xl hover:text-gray-400" />
-            </a>
-          </div>
-        </div>
-
-        {/* Section 3: Contact Information *
-        <div>
-          <h3 className="font-semibold text-xl mb-4">Contact Us</h3>
-          <p className="text-sm">
-            //Email: <a href="mailto:info@company.com" className="hover:text-gray-400">info@company.com</a>
-          </p>
-          <p className="text-sm">Phone: (123) 456-7890</p>
-        </div>
-
-        {/* Section 4: Copyright *
-        <div className="col-span-1 sm:col-span-2 lg:col-span-4 flex justify-center mt-6 sm:mt-0">
-          <p className="text-sm text-center">
-            &copy; {new Date().getFullYear()} Your Company. All Rights Reserved.
-          </p>
-        </div>
-      </div>
-    </footer>
-  );
-};
-
-export default Footer;*/
-
-'use client';
-
-import Link from 'next/link';
-import { FaFacebookF, FaTwitter, FaDribbble, FaInstagram, FaYoutube } from 'react-icons/fa';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FaLinkedin, FaTwitter, FaYoutube, FaFlask, FaRegEnvelope } from 'react-icons/fa';
+import { GiChemicalDrop } from 'react-icons/gi';
 
 const Footer = () => {
+  const floatingVariants = {
+    float: {
+      y: [0, -20, 0],
+      transition: {
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   return (
-    <footer className="bg-gray-900 text-gray-300 py-3">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-3">
-        {/* Brand Section */}
-        <div>
-          <Link href="/" className="text-white text-3xl font-bold">
-            Malex Chemical Supplies
-          </Link>
-          <p className="mt-4">&copy; 2025 Malex. All rights reserved.</p>
-          <div className="flex space-x-4 mt-4">
-            <FaFacebookF className="text-white cursor-pointer hover:text-blue-500" />
-            <FaTwitter className="text-white cursor-pointer hover:text-blue-400" />
-            <FaDribbble className="text-white cursor-pointer hover:text-pink-400" />
-            <FaInstagram className="text-white cursor-pointer hover:text-purple-500" />
-            <FaYoutube className="text-white cursor-pointer hover:text-red-500" />
+    <footer className="relative bg-gradient-to-br from-blue-900 to-blue-950 text-white overflow-hidden">
+      {/* Floating molecules */}
+      <div className="absolute inset-0 opacity-10">
+        {[...Array(15)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute text-blue-300"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              fontSize: `${Math.random() * 20 + 20}px`
+            }}
+            animate={{
+              y: [0, (Math.random() - 0.5) * 40],
+              x: [0, (Math.random() - 0.5) * 40],
+              rotate: [0, 360],
+              transition: {
+                duration: 20 + Math.random() * 20,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "linear"
+              }
+            }}
+          >
+            <GiChemicalDrop className="w-full h-full" />
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="container mx-auto px-6 py-20 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+          {/* Logo Section */}
+          <motion.div 
+            className="space-y-6"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+          >
+            <motion.div
+              className="flex items-center"
+              variants={floatingVariants}
+              animate="float"
+            >
+              <FaFlask className="text-3xl mr-3 text-blue-400" />
+              <span className="text-2xl font-bold">Malex Chemical</span>
+            </motion.div>
+            <p className="text-blue-300">
+              Pioneering chemical solutions for a sustainable future
+            </p>
+            <div className="flex space-x-4">
+              {[FaLinkedin, FaTwitter, FaYoutube].map((Icon, i) => (
+                <motion.a
+                  key={i}
+                  href="#"
+                  className="p-3 bg-blue-800/30 rounded-full hover:bg-blue-700/50 transition-colors"
+                  whileHover={{ scale: 1.1 }}
+                >
+                  <Icon className="text-xl" />
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Quick Links */}
+          <div className="space-y-6">
+            <h3 className="text-xl font-bold text-blue-400">Solutions</h3>
+            <ul className="space-y-4">
+              {['Industrial Chemicals', 'Laboratory Supplies', 'Safety Equipment', 'Custom Formulations'].map((link, i) => (
+                <motion.li
+                  key={i}
+                  whileHover={{ x: 5 }}
+                  className="text-blue-300 hover:text-white cursor-pointer"
+                >
+                  {link}
+                </motion.li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div className="space-y-6">
+            <h3 className="text-xl font-bold text-blue-400">Contact</h3>
+            <ul className="space-y-4">
+              <li className="flex items-center">
+                <FaRegEnvelope className="mr-3 text-blue-400" />
+                contact@malexchemical.com
+              </li>
+              <li className="flex items-center">
+                <FaFlask className="mr-3 text-blue-400" />
+                +1 (555) 123-4567
+              </li>
+              <li className="flex items-center">
+                <GiChemicalDrop className="mr-3 text-blue-400" />
+                123 Innovation Drive
+              </li>
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div className="space-y-6">
+            <h3 className="text-xl font-bold text-blue-400">Stay Updated</h3>
+            <form className="flex flex-col space-y-4">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="bg-blue-800/30 border border-blue-700 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-blue-500 to-blue-600 py-3 rounded-lg font-semibold"
+              >
+                Subscribe
+              </motion.button>
+            </form>
           </div>
         </div>
 
-        {/* Contact Section */}
-        <div>
-          <h4 className="text-white text-lg mb-4">Get in Touch</h4>
-          <p className="mb-2">5th Floor Green Court Building, Latema Rd, Nairobi-Kenya</p>
-          <p className="mb-2">P.O Box 40, 10129 Nairobi-Kenya</p>
-          <Link href="sales@malexchemsupplies.com" className="block hover:text-blue-400">sales@malexchemsupplies.com</Link>
-          <Link href="alex@malexchemsupplies.com" className="block hover:text-blue-400 mb-4">alex@malexchemsupplies.com</Link>
-          <Link href="tel:+254718548695" className="block hover:text-blue-400 text-lg">+254 (0)7 185 486 95</Link>
-          <Link href="tel:+254702115277" className="block hover:text-blue-400 text-lg">+254 (0)7 021 152 77</Link>
-        </div>
+        {/* Divider */}
+        <div className="border-t border-blue-800/50 mb-8"></div>
 
-        {/* Newsletter Section */}
-        <div>
-          <h4 className="text-white text-lg mb-4">Our Newsletter</h4>
-          <p>Subscribe to get our latest updates and deals.</p>
-          <form className="relative mt-4">
-            <input
-              type="email"
-              placeholder="Email Address"
-              className="w-full bg-gray-800 text-white px-4 py-2 border border-gray-600 rounded-l focus:outline-none"
-            />
-            <button className="absolute right-0 top-0 h-full px-6 bg-blue-500 text-white font-bold rounded-r hover:bg-blue-600">
-              Join
-            </button>
-          </form>
+        {/* Bottom Section */}
+        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="text-blue-400 text-sm">
+            © {new Date().getFullYear()} Malex Chemical. All rights reserved.
+          </div>
+          <div className="flex space-x-6">
+            {['Privacy Policy', 'Terms of Service', 'Safety Docs'].map((item, i) => (
+              <motion.a
+                key={i}
+                href="#"
+                className="text-blue-300 hover:text-white text-sm"
+                whileHover={{ y: -2 }}
+              >
+                {item}
+              </motion.a>
+            ))}
+          </div>
         </div>
       </div>
+
+      {/* Floating Element */}
+      <motion.div 
+        className="absolute bottom-20 left-1/2 w-48 h-48 bg-blue-800/20 rounded-full blur-xl"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.5, 0.3],
+          transition: {
+            duration: 8,
+            repeat: Infinity
+          }
+        }}
+      />
     </footer>
   );
 };
