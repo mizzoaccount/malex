@@ -111,9 +111,9 @@ const Hero: React.FC = () => {
             className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight"
           >
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-100">
-              Malex Chemical
+              Malex Chem
             </span> <br />
-            <span className="text-white">Supplies</span>
+            <span className="text-white">Supplies Ltd</span>
           </motion.h1>
 
           <motion.p 

@@ -18,6 +18,9 @@ const ProductsSection = () => {
       description: "High-performance solvents for industrial cleaning and degreasing applications.",
       image: "/product-solvents.jpg",
       specs: ["Fast evaporation", "Low toxicity", "High purity"],
+      price: 120,
+      inStock: true,
+      featured: true
     },
     {
       id: 2,

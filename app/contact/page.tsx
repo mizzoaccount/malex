@@ -2,7 +2,9 @@
 
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Header"; // Assuming you have the Navbar in this path
+import NavbarTwo from "@/components/HeaderTwo";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaChevronDown } from "react-icons/fa";
+import { FiSend } from "react-icons/fi";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -17,118 +19,190 @@ const staggerContainer = {
   }
 };
 
+const cardHover = {
+  hover: {
+    y: -5,
+    transition: {
+      duration: 0.3,
+      type: "spring",
+      stiffness: 400,
+      damping: 10
+    }
+  }
+};
+
 export default function ContactPage() {
   return (
     <div className="bg-gray-50">
       {/* Navbar */}
-      <Navbar />
+      <NavbarTwo />
+
+      {/* Hero Section */}
+      <section className="relative py-32 bg-gradient-to-br from-blue-50 to-white overflow-hidden">
+        {/* Floating molecules */}
+        {[...Array(12)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute text-blue-200"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              fontSize: `${Math.random() * 20 + 10}px`
+            }}
+            animate={{
+              y: [0, (Math.random() - 0.5) * 40],
+              x: [0, (Math.random() - 0.5) * 40],
+              rotate: [0, 360],
+              transition: {
+                duration: 20 + Math.random() * 20,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "linear"
+              }
+            }}
+          >
+            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
+              <circle cx="12" cy="12" r="2" />
+              <path d="M16 12l3 3m-7 0l3-3m-5-5l3-3m-3 14l3-3" />
+            </svg>
+          </motion.div>
+        ))}
+
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+             <span className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-600 font-medium mb-4">
+              Contact Us
+            </span>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              Contact <span className="text-blue-600">Malex Chem</span>
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Reach out to our team for expert chemical solutions and support
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Contact Content */}
       <motion.section 
         initial="hidden"
         animate="visible"
         variants={staggerContainer}
-        className="py-16 px-4 sm:px-6 lg:px-8 pt-24" // Added pt-24 to account for fixed navbar
+        className="py-20 px-4 sm:px-6 lg:px-8"
       >
-        {/* Hero Section */}
-        <motion.div 
-          variants={fadeIn}
-          className="max-w-7xl mx-auto text-center mb-16"
-        >
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Get In <span className="text-blue-600">Touch</span>
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We're here to answer your questions and provide the chemical solutions you need.
-          </p>
-        </motion.div>
-
-        {/* Contact Content */}
         <div className="max-w-7xl mx-auto">
           {/* Contact Cards */}
           <motion.div 
             variants={fadeIn}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20"
           >
             {/* Phone Card */}
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
+            <motion.div 
+              className="bg-white p-8 rounded-xl shadow-lg border border-blue-100 hover:border-blue-200 transition-all"
+              variants={fadeIn}
+              whileHover="hover"
+            >
+              <div className="w-16 h-16 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6">
+                <FaPhone className="text-2xl" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Phone</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Phone</h3>
               <p className="text-gray-600 mb-2">+2547 185 486 95</p>
               <p className="text-gray-600">+2547 021 152 77</p>
-            </div>
+            </motion.div>
 
             {/* Email Card */}
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
+            <motion.div 
+              className="bg-white p-8 rounded-xl shadow-lg border border-blue-100 hover:border-blue-200 transition-all"
+              variants={fadeIn}
+              whileHover="hover"
+            >
+              <div className="w-16 h-16 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6">
+                <FaEnvelope className="text-2xl" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Email</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Email</h3>
               <p className="text-gray-600 mb-2">sales@malexsupplies.com</p>
               <p className="text-gray-600">alex@malexsupplies.com</p>
-            </div>
+            </motion.div>
 
             {/* Location Card */}
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
+            <motion.div 
+              className="bg-white p-8 rounded-xl shadow-lg border border-blue-100 hover:border-blue-200 transition-all"
+              variants={fadeIn}
+              whileHover="hover"
+            >
+              <div className="w-16 h-16 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6">
+                <FaMapMarkerAlt className="text-2xl" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Location</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Location</h3>
               <p className="text-gray-600">Hotel Green Court Building</p>
               <p className="text-gray-600">5th Floor, Latema Road</p>
               <p className="text-gray-600">Nairobi, Kenya</p>
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Contact Form and Map */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
             {/* Contact Form */}
             <motion.div 
               variants={fadeIn}
-              className="bg-white p-8 rounded-xl shadow-lg"
+              className="bg-white p-8 rounded-xl shadow-lg border border-blue-100"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+              <div className="mb-8">
+                <span className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-600 font-medium mb-4">
+                  Get In Touch
+                </span>
+                <h2 className="text-3xl font-bold text-gray-900 mb-2">Send Us a Message</h2>
+                <p className="text-gray-600">We typically respond within 24 hours</p>
+              </div>
+              
               <form className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                    <input 
+                      type="text" 
+                      id="name" 
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                      placeholder="John Doe"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                      placeholder="john@example.com"
+                    />
+                  </div>
+                </div>
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
                   <input 
                     type="text" 
-                    id="name" 
+                    id="subject" 
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-                    placeholder="John Doe"
+                    placeholder="How can we help?"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-                    placeholder="john@example.com"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Your Message</label>
                   <textarea 
                     id="message" 
                     rows={5}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-                    placeholder="How can we help you?"
+                    placeholder="Tell us more about your needs..."
                   ></textarea>
                 </div>
                 <button 
                   type="submit"
-                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition duration-300"
+                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 px-6 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 flex items-center justify-center"
                 >
+                  <FiSend className="mr-2" />
                   Send Message
                 </button>
               </form>
@@ -137,59 +211,93 @@ export default function ContactPage() {
             {/* Map */}
             <motion.div 
               variants={fadeIn}
-              className="bg-white p-1 rounded-xl shadow-lg overflow-hidden"
+              className="bg-white p-1 rounded-xl shadow-lg border border-blue-100 overflow-hidden h-full"
             >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8189881284225!2d36.822488075827444!3d-1.2824046356236611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11d5366d37f9%3A0xc72de9b7a73c5626!2sGreen%20Court%20Hotel!5e0!3m2!1sen!2ske!4v1741252292109!5m2!1sen!2ske"
-                className="w-full h-full min-h-[400px] rounded-lg"
-                style={{ border: "0" }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-800 mb-4">Our Headquarters</h3>
+                <p className="text-gray-600 mb-6">Visit us at our Nairobi office for consultations and product demonstrations.</p>
+                
+                <div className="relative overflow-hidden rounded-lg" style={{ paddingBottom: "100%" }}>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8189881284225!2d36.822488075827444!3d-1.2824046356236611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11d5366d37f9%3A0xc72de9b7a73c5626!2sGreen%20Court%20Hotel!5e0!3m2!1sen!2ske!4v1741252292109!5m2!1sen!2ske"
+                    className="absolute top-0 left-0 w-full h-full"
+                    style={{ border: "0" }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+                
+                <div className="mt-6">
+                  <h4 className="font-semibold text-gray-800 mb-2">Business Hours</h4>
+                  <ul className="text-gray-600 space-y-1">
+                    <li className="flex justify-between">
+                      <span>Monday - Friday</span>
+                      <span>8:00 AM - 5:00 PM</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span>Saturday</span>
+                      <span>9:00 AM - 1:00 PM</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span>Sunday</span>
+                      <span>Closed</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </motion.div>
           </div>
 
           {/* FAQ Section */}
           <motion.div 
             variants={fadeIn}
-            className="bg-white rounded-xl shadow-lg overflow-hidden"
+            className="bg-white rounded-xl shadow-lg border border-blue-100 overflow-hidden"
           >
-            <div className="p-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">Frequently Asked Questions</h2>
-              <p className="text-gray-600 mb-8">Find answers to common questions about our products and services.</p>
+            <div className="p-8 md:p-12">
+              <div className="text-center mb-12">
+                <span className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-600 font-medium mb-4">
+                  Need Help?
+                </span>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                  Frequently Asked <span className="text-blue-600">Questions</span>
+                </h2>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  Find answers to common questions about our products and services.
+                </p>
+              </div>
               
-              <div className="space-y-4">
+              <div className="max-w-3xl mx-auto space-y-6">
                 {[
                   {
                     question: "What chemicals do you supply?",
-                    answer: "We supply a wide range of industrial and laboratory chemicals, including solvents, acids, and specialty compounds."
+                    answer: "We supply a comprehensive range of industrial and laboratory chemicals, including solvents, acids, bases, reagents, and specialty compounds for various applications."
                   },
                   {
                     question: "Are your chemicals safe for use?",
-                    answer: "Yes, all our chemicals comply with safety regulations, and we provide proper handling guidelines."
+                    answer: "Absolutely. All our chemicals comply with international safety regulations. We provide detailed Material Safety Data Sheets (MSDS) and handling guidelines with every product."
                   },
                   {
                     question: "Do you offer bulk purchasing options?",
-                    answer: "Yes, we offer bulk pricing and discounts for large orders."
+                    answer: "Yes, we provide significant discounts for bulk orders. Our team can work with you to develop a customized procurement plan that meets your volume requirements."
                   },
                   {
                     question: "How do you ensure product quality?",
-                    answer: "We source from reputable manufacturers and conduct thorough quality checks."
+                    answer: "We partner with ISO-certified manufacturers and conduct rigorous quality control tests. Each batch is verified for purity and consistency before distribution."
                   },
                   {
-                    question: "Can I get a consultation before purchasing?",
-                    answer: "Absolutely! Our experts are available to guide you on the best chemical solutions for your needs."
+                    question: "Can I get technical consultation before purchasing?",
+                    answer: "Certainly. Our team of chemical experts offers free consultations to help you select the most appropriate products for your specific applications and requirements."
                   }
                 ].map((faq, index) => (
-                  <div key={index} className="border-b border-gray-200 pb-4">
-                    <button className="flex justify-between items-center w-full text-left group">
-                      <h3 className="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition">{faq.question}</h3>
-                      <svg className="w-5 h-5 text-gray-500 group-hover:text-blue-600 transition transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
+                  <div key={index} className="border border-gray-200 rounded-xl overflow-hidden">
+                    <button className="flex justify-between items-center w-full text-left p-6 group">
+                      <h3 className="text-lg font-semibold text-gray-800 group-hover:text-blue-600 transition">
+                        {faq.question}
+                      </h3>
+                      <FaChevronDown className="text-gray-500 group-hover:text-blue-600 transition-transform duration-300 group-hover:rotate-180" />
                     </button>
-                    <div className="mt-2 text-gray-600">
+                    <div className="px-6 pb-6 pt-0 text-gray-600 bg-gray-50">
                       <p>{faq.answer}</p>
                     </div>
                   </div>
@@ -199,112 +307,36 @@ export default function ContactPage() {
           </motion.div>
         </div>
       </motion.section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+        <div className="container mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Ready to <span className="text-blue-100">Partner</span> With Us?
+            </h2>
+            <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+              Join hundreds of satisfied clients who trust Malex Chem for their chemical supply needs.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <button className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition duration-300 shadow-lg hover:shadow-xl">
+                Request a Quote
+              </button>
+              <button className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition duration-300 shadow-lg hover:shadow-xl">
+                Call Our Experts
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
 }
-/*import Footer from "@/components/Footer";
-
-export default function ContactPage() {
-    return (
-        <div>
-      <section className="min-h-screen bg-gray-100 py-12 px-3 sm:px-6 lg:px-8 mt-8">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white shadow-lg rounded-lg p-3">
-          {/* Left Section *
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">Contact Us</h2>
-            <p className="text-gray-600 mb-4">Reach out to us through any of the options below.</p>
-            
-            <div className="mb-6">
-              <p className="text-lg font-semibold text-gray-800">Phone:</p>
-              <p className="text-gray-600">+2547 185 486 95</p>
-              <p className="text-gray-600">+2547 021 152 77</p>
-            </div>
-  
-            <div className="mb-6">
-              <p className="text-lg font-semibold text-gray-800">Email:</p>
-              <p className="text-gray-600">sales@malexsupplies.com</p>
-              <p className="text-gray-600">alex@malexsupplies.com</p>
-            </div>
-  
-            <div className="mb-6">
-              <p className="text-lg font-semibold text-gray-800">Follow Us:</p>
-              <div className="flex space-x-4 mt-2">
-                <a href="#" className="text-blue-600 hover:text-blue-800">Facebook</a>
-                <a href="#" className="text-blue-600 hover:text-blue-800">Twitter</a>
-                <a href="#" className="text-blue-600 hover:text-blue-800">Instagram</a>
-              </div>
-            </div>
-          </div>
-  
-          {/* Right Section - Contact Form *
-          <div className="bg-gray-50 p-3 rounded-lg shadow-md">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">Get in Touch</h3>
-            <form className="space-y-4">
-              <input type="text" placeholder="Your Name" className="w-full p-3 border rounded-md focus:ring-2 focus:ring-blue-600" />
-              <input type="email" placeholder="Email" className="w-full p-3 border rounded-md focus:ring-2 focus:ring-blue-600" />
-              <textarea placeholder="Your Message"  className="w-full p-3 border rounded-md focus:ring-2 focus:ring-blue-600"></textarea>
-              <button className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition">Send Message</button>
-            </form>
-          </div>
-        </div>
-  
-        {/* Location Section *
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-3 bg-white shadow-lg rounded-lg p-3 mt-3">
-          {/* Left - Map *
-          <div className="w-full h-[400px] lg:h-[550px]">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8189881284225!2d36.822488075827444!3d-1.2824046356236611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11d5366d37f9%3A0xc72de9b7a73c5626!2sGreen%20Court%20Hotel!5e0!3m2!1sen!2ske!4v1741252292109!5m2!1sen!2ske"
-              className="w-full h-full rounded-lg"
-              style={{ border: "0" }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-
-          {/* Right - Location Description *
-          <div className="flex flex-col justify-center lg:pl-10 space-y-3">
-            <h3 className="text-2xl font-semibold text-gray-900">Our Location</h3>
-            <p className="text-gray-600">Hotel Green Court Building</p>
-            <p className="text-gray-600">5th Floor</p>
-            <p className="text-gray-600">Latema Road, Nairobi.</p>
-            <p className="text-gray-600">Kenya.</p>
-          </div>
-        </div>
-        {/* FAQ Section *
-        <div className="max-w-6xl mx-auto bg-white shadow-lg rounded-lg p-3 mt-3 grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {/* Left - FAQ Title *
-          <div className="flex items-center">
-            <h3 className="text-3xl font-bold text-gray-900">Do you have any Questions for us?</h3>
-          </div>
-          {/* Right - FAQ List *
-          <div className="space-y-4">
-            <details className="border-b border-gray-200 py-4">
-              <summary className="text-lg text-gray-600 font-semibold cursor-pointer">What chemicals do you supply?</summary>
-              <p className="text-gray-600 mt-2">We supply a wide range of industrial and laboratory chemicals, including solvents, acids, and specialty compounds.</p>
-            </details>
-            <details className="border-b border-gray-200 py-4">
-              <summary className="text-lg text-gray-600 font-semibold cursor-pointer">Are your chemicals safe for use?</summary>
-              <p className="text-gray-600 mt-2">Yes, all our chemicals comply with safety regulations, and we provide proper handling guidelines.</p>
-            </details>
-            <details className="border-b border-gray-200 py-4">
-              <summary className="text-lg text-gray-600 font-semibold cursor-pointer">Do you offer bulk purchasing options?</summary>
-              <p className="text-gray-600 mt-2">Yes, we offer bulk pricing and discounts for large orders.</p>
-            </details>
-            <details className="border-b border-gray-200 py-4">
-              <summary className="text-lg text-gray-600 font-semibold cursor-pointer">How do you ensure product quality?</summary>
-              <p className="text-gray-600 mt-2">We source from reputable manufacturers and conduct thorough quality checks.</p>
-            </details>
-            <details className="border-b border-gray-200 py-4">
-              <summary className="text-lg text-gray-600 font-semibold cursor-pointer">Can I get a consultation before purchasing?</summary>
-              <p className="text-gray-600 mt-2">Absolutely! Our experts are available to guide you on the best chemical solutions for your needs.</p>
-            </details>
-          </div>
-        </div>
-      </section>
-      <Footer />
-      </div>
-    );
-  }*/
   

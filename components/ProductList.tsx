@@ -19,6 +19,9 @@ const ProductsSection = () => {
       description: "High-performance solvents for industrial cleaning and degreasing applications.",
       image: "/product-solvents.jpg",
       specs: ["Fast evaporation", "Low toxicity", "High purity"],
+      price: 85,
+      inStock: true,
+      featured: true
     },
     {
       id: 2,
@@ -27,6 +30,9 @@ const ProductsSection = () => {
       description: "Advanced polymer solutions for coatings, adhesives, and composites.",
       image: "/product-resins.jpg",
       specs: ["UV resistant", "Thermal stable", "Custom formulations"],
+      price: 85,
+      inStock: true,
+      featured: true
     },
     {
       id: 3,
@@ -35,6 +41,9 @@ const ProductsSection = () => {
       description: "Precision lab tools for accurate measurement and analysis.",
       image: "/product-lab-equip.jpg",
       specs: ["Certified accuracy", "Durable construction", "Easy calibration"],
+      price: 85,
+      inStock: true,
+      featured: true
     },
     {
       id: 4,
@@ -43,6 +52,9 @@ const ProductsSection = () => {
       description: "Protective equipment for handling hazardous materials.",
       image: "/product-safety-gear.jpg",
       specs: ["Chemical resistant", "Comfortable fit", "Durable materials"],
+      price: 85,
+      inStock: true,
+      featured: true
     },
     {
       id: 5,
@@ -51,6 +63,9 @@ const ProductsSection = () => {
       description: "Environmentally friendly cleaning solutions from renewable sources.",
       image: "/product-bio-cleaners.jpg",
       specs: ["Biodegradable", "Non-toxic", "High efficiency"],
+      price: 85,
+      inStock: true,
+      featured: true
     },
     {
       id: 6,
@@ -59,6 +74,9 @@ const ProductsSection = () => {
       description: "Advanced instruments for precise chemical analysis.",
       image: "/product-analytical.jpg",
       specs: ["Digital readouts", "High precision", "Low maintenance"],
+      price: 85,
+      inStock: true,
+      featured: true
     },
     {
       id: 7,
@@ -67,6 +85,9 @@ const ProductsSection = () => {
       description: "Specialized formulations for industrial water treatment.",
       image: "/product-water-treatment.jpg",
       specs: ["pH balanced", "Anti-corrosive", "Eco-friendly"],
+      price: 85,
+      inStock: true,
+      featured: true
     },
     {
       id: 8,
@@ -75,6 +96,9 @@ const ProductsSection = () => {
       description: "Biodegradable containers for chemical storage and transport.",
       image: "/product-packaging.jpg",
       specs: ["Recyclable", "Leak-proof", "Durable"],
+      price: 85,
+      inStock: true,
+      featured: true
     },
   ];
 

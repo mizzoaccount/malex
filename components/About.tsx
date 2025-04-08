@@ -6,9 +6,9 @@ import { FaFlask, FaAward, FaLeaf, FaGlobe, FaShieldAlt } from 'react-icons/fa';
 
 const AboutSection = () => {
   const stats = [
-    { value: '25+', label: 'Years Experience', icon: <FaAward className="text-blue-600 text-3xl" /> },
+    { value: '20+', label: 'Years Experience', icon: <FaAward className="text-blue-600 text-3xl" /> },
     { value: '500+', label: 'Products', icon: <FaFlask className="text-blue-600 text-3xl" /> },
-    { value: '40+', label: 'Countries Served', icon: <FaGlobe className="text-blue-600 text-3xl" /> },
+    { value: '40+', label: 'Counties Served', icon: <FaGlobe className="text-blue-600 text-3xl" /> },
   ];
 
   const features = [
@@ -98,7 +98,7 @@ const AboutSection = () => {
           <motion.div className="relative" variants={itemVariants}>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src="/chemical-lab.jpg" 
+                src="https://i.pinimg.com/736x/dc/cf/47/dccf47c2bf129ee8a1c01fa649ae931b.jpg" 
                 alt="Modern chemical laboratory"
                 className="w-full h-auto object-cover"
                 width={600}
@@ -147,14 +147,14 @@ const AboutSection = () => {
               className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
               variants={itemVariants}
             >
-              Pioneering <span className="text-blue-600">Chemical Innovation</span> Since 1998
+              Pioneering <span className="text-blue-600">Chemical Innovation</span> Since 2005
             </motion.h2>
             
             <motion.p 
               className="text-lg text-gray-600 mb-8"
               variants={itemVariants}
             >
-              Malex Chemical Supplies has been at the forefront of chemical manufacturing and distribution, providing high-quality solutions to industries worldwide. Our commitment to excellence and sustainability drives every formulation we create.
+              Malex Chemical Supplies has been at the forefront of chemical distribution, providing high-quality solutions to industries countrywide. Our commitment to excellence and sustainability drives every formulation we create.
             </motion.p>
 
             {/* Stats */}

@@ -11,27 +11,69 @@ const ClientReviews = () => {
   const reviews = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      company: "Global Chemical Corp",
-      review: "Their expertise in chemical solutions transformed our production process, increasing efficiency while maintaining safety standards.",
+      name: "Memon Academy",
+      company: "Memon Academy",
+      review: "An exceptional learning environment that blends academic excellence with character building. Our students are thriving!",
       rating: 5,
     },
     {
       id: 2,
-      name: "Sarah Johnson",
-      company: "Global Chemical Corp",
-      review: "Their expertise in chemical solutions transformed our production process, increasing efficiency while maintaining safety standards.",
-      rating: 5,
+      name: "Rose of Sharon Academy",
+      company: "Rose of Sharon Academy",
+      review: "We appreciate their holistic approach to education. Our collaboration brought a fresh perspective to student engagement.",
+      rating: 4,
     },
     {
       id: 3,
-      name: "Sarah Johnson",
-      company: "Global Chemical Corp",
-      review: "Their expertise in chemical solutions transformed our production process, increasing efficiency while maintaining safety standards.",
+      name: "Kipepeo International School",
+      company: "Kipepeo International School",
+      review: "A transformative partnership that enhanced both curriculum design and student performance outcomes.",
       rating: 5,
     },
-    // ... other reviews
+    {
+      id: 4,
+      name: "Rophine Field International School",
+      company: "Rophine Field International School",
+      review: "Their tailored educational solutions helped us create a more dynamic and inclusive school culture.",
+      rating: 4,
+    },
+    {
+      id: 5,
+      name: "Millfield Academy Runda",
+      company: "Millfield Academy Runda",
+      review: "Professional and impactful support that made a measurable difference in our academic delivery.",
+      rating: 5,
+    },
+    {
+      id: 6,
+      name: "The Nairobi Waldof School Trust",
+      company: "The Nairobi Waldof School Trust",
+      review: "A creative and child-centered approach that resonated perfectly with our teaching philosophy.",
+      rating: 5,
+    },
+    {
+      id: 7,
+      name: "Naisula International School",
+      company: "Naisula International School",
+      review: "Their innovative methods boosted both staff morale and student participation across the board.",
+      rating: 4,
+    },
+    {
+      id: 8,
+      name: "St.Austin Academy",
+      company: "St.Austin Academy",
+      review: "Reliable, responsive, and committed to educational success. We look forward to future collaborations.",
+      rating: 5,
+    },
+    {
+      id: 9,
+      name: "Sabis International School",
+      company: "Sabis International School",
+      review: "Excellent service with attention to detail. Their expertise has enriched our academic programs.",
+      rating: 5,
+    },
   ];
+  
 
   const handleNext = () => {
     setDirection(1);

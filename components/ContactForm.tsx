@@ -100,7 +100,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Email</h3>
-                  <p className="text-gray-600">contact@malexchemical.com</p>
+                  <p className="text-gray-600">sales@malexchemsupplies.com</p>
                 </div>
               </div>
 
@@ -110,7 +110,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Phone</h3>
-                  <p className="text-gray-600">+1 (555) 123-4567</p>
+                  <p className="text-gray-600">+254 (7) 185-486-95</p>
                 </div>
               </div>
 
@@ -120,7 +120,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">HQ Location</h3>
-                  <p className="text-gray-600">123 Chemical Drive, Innovation Park, CA</p>
+                  <p className="text-gray-600">Hotel Green Court Building, 5th Floor, Latema Road, Nairobi, Kenya</p>
                 </div>
               </div>
             </div>

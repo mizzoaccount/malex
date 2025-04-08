@@ -6,6 +6,7 @@ import { FaFlask, FaIndustry, FaLeaf, FaShieldAlt, FaSearch, FaArrowRight, FaFil
 import Navbar from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import NavbarTwo from '@/components/HeaderTwo';
 
 const ProductsPage = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -209,7 +210,7 @@ const ProductsPage = () => {
 
   return (
     <div className="bg-gray-50">
-      <Navbar />
+      <NavbarTwo />
       
       <section className="relative py-20 bg-gradient-to-b from-blue-50 to-white overflow-hidden pt-24">
         {/* Floating chemical structures */}

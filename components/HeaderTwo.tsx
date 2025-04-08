@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 
-const Navbar: React.FC = () => {
+const NavbarTwo: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
     <>
       {/* Desktop Navigation */}
       <motion.nav 
-        className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-blue-900/90 backdrop-blur-md py-2 shadow-lg' : 'bg-transparent py-4'}`}
+        className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-blue-900/90 backdrop-blur-md py-2 shadow-lg' : 'bg-blue-900/90 py-4'}`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
@@ -206,4 +206,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;
+export default NavbarTwo;

@@ -61,7 +61,7 @@ const Footer = () => {
               animate="float"
             >
               <FaFlask className="text-3xl mr-3 text-blue-400" />
-              <span className="text-2xl font-bold">Malex Chemical</span>
+              <span className="text-2xl font-bold">Malex Chem Supplies</span>
             </motion.div>
             <p className="text-blue-300">
               Pioneering chemical solutions for a sustainable future
@@ -102,15 +102,17 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-center">
                 <FaRegEnvelope className="mr-3 text-blue-400" />
-                contact@malexchemical.com
+               sales@malexsupplies.com
               </li>
               <li className="flex items-center">
                 <FaFlask className="mr-3 text-blue-400" />
-                +1 (555) 123-4567
+                +254 (7) 185-486-95
               </li>
               <li className="flex items-center">
                 <GiChemicalDrop className="mr-3 text-blue-400" />
-                123 Innovation Drive
+                Hotel Green Court Building
+                5th Floor, Latema Road
+                Nairobi, Kenya
               </li>
             </ul>
           </div>
