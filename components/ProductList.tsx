@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaFlask, FaIndustry, FaLeaf, FaShieldAlt, FaSearch, FaArrowRight } from 'react-icons/fa';
+import Link from 'next/link';
 
 const ProductsSection = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -261,10 +262,23 @@ const ProductsSection = () => {
                           </div>
                         ))}
                       </div>
-                      <button className="w-full flex items-center justify-between px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors">
+                               <Link 
+                        href={`/products/${product.id}`} 
+                        className={`w-full flex items-center justify-between px-4 py-2 rounded-lg transition-colors ${
+                          product.inStock 
+                            ? 'bg-blue-50 text-blue-600 hover:bg-blue-100' 
+                            : 'bg-gray-100 text-gray-400 cursor-not-allowed pointer-events-none'
+                        }`}
+                        aria-disabled={!product.inStock}
+                        tabIndex={product.inStock ? 0 : -1}
+                      >
+                        <span>{product.inStock ? 'View Details' : 'Not Available'}</span>
+                        {product.inStock && <FaArrowRight />}
+                      </Link>
+                      {/*<button className="w-full flex items-center justify-between px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors">
                         <span>View Details</span>
                         <FaArrowRight />
-                      </button>
+                      </button>*/}
                     </div>
                   </motion.div>
                 ))
