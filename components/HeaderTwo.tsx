@@ -22,6 +22,7 @@ const NavbarTwo: React.FC = () => {
     { name: 'Products', href: '/products' },
     { name: 'Solutions', href: '/solutions' },
     { name: 'Contact', href: '/contact' },
+    { name: 'Register', href: '/auth/register' },
   ];
 
   const mobileNavVariants = {
