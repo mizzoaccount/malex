@@ -1,20 +1,4 @@
-// types/index.ts
 
-import { Socket } from "socket.io-client";
-
-// Base user interface (simplified - you might want to expand this based on your User model)
-/*export interface User {
-    _id: string;
-    username: string;
-    email: string;
-    password: string;
-    role: 'user' | 'admin';
-    avatar: string;
-    isOnline: boolean;
-    lastSeen?: Date;
-    createdAt: Date;
-    updatedAt: Date;
-  }*/
 
   export interface User {
     _id: string;
@@ -31,6 +15,7 @@ import { Socket } from "socket.io-client";
   }
 
   // types/index.ts
+// types/index.ts
 export interface Message {
   _id: string;
   conversationId: string;
@@ -42,17 +27,23 @@ export interface Message {
   content: string;
   readBy: string[];
   createdAt: Date | string;
+  isOptimistic?: boolean; // Add this optional field
 }
+
 
   
   export interface Conversation {
     _id: string;
     participants: Participant[];
     messages?: (Message | string)[]; // Array of Message objects or IDs (optional as it might not always be populated)
-    lastMessage?: Message; // Optional last message reference
+    lastMessage?: Message | string; 
+   // lastMessage?: Message; // Optional last message reference
     createdAt: Date;
     updatedAt: Date;
   }
+
+
+  
   
   // For API responses where population is used
   export interface PopulatedConversation extends Omit<Conversation, 'participants' | 'messages'> {
@@ -98,13 +89,6 @@ export interface Participant {
 }
 
 
-export interface Conversation {
-  _id: string;
-  participants: Participant[];
-  lastMessage?: Message;
-  createdAt: Date;
-  updatedAt: Date;
-}
 
 // For when you know participants are populated
 export interface PopulatedConversation extends Omit<Conversation, 'participants'> {

@@ -1,9 +1,8 @@
-// components/chat/ChatList.tsx
-/*"use client"
-
+"use client"
 import { useChat } from '@/context/ChatContext';
 import { useAuth } from '@/context/AuthContext';
 import { Conversation, User } from '@/types';
+import { useEffect } from 'react';
 
 const ChatList = () => {
   const { user } = useAuth();
@@ -11,8 +10,15 @@ const ChatList = () => {
     conversations, 
     currentConversation, 
     setCurrentConversation,
-    fetchMessages
+    fetchMessages,
+    //loadInitialData
   } = useChat();
+
+  /*useEffect(() => {
+    if (loadInitialData) {
+      loadInitialData();
+    }
+  }, [loadInitialData]);*/
 
   const handleSelectConversation = async (conversation: Conversation) => {
     setCurrentConversation(conversation);
@@ -23,19 +29,20 @@ const ChatList = () => {
     if (!user) return null;
     
     const participant = conversation.participants.find(p => {
-      // Handle both cases where userId could be string or User object
       if (typeof p.userId === 'string') {
-        return p.userId !== user._id;
+        return p.userId !== user.id;
       } else {
-        return p.userId._id !== user._id;
+        return p.userId._id !== user.id;
       }
     });
 
     if (!participant) return null;
-
-    // Return the User object if populated, or null if it's just an ID
     return typeof participant.userId === 'string' ? null : participant.userId;
   };
+
+  if (!conversations) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="w-full max-w-md bg-white rounded-lg shadow">
@@ -47,6 +54,13 @@ const ChatList = () => {
           const otherParticipant = getOtherParticipant(conversation);
           if (!otherParticipant) return null;
           
+          // Get last message content safely
+          const lastMessageContent = conversation.lastMessage
+            ? typeof conversation.lastMessage === 'object'
+              ? conversation.lastMessage.content
+              : ''
+            : '';
+
           return (
             <div 
               key={conversation._id}
@@ -69,9 +83,7 @@ const ChatList = () => {
                     )}
                   </p>
                   <p className="text-sm text-gray-500 truncate">
-                    {typeof conversation.lastMessage === 'object' 
-                      ? conversation.lastMessage?.content 
-                      : ''}
+                    {lastMessageContent}
                   </p>
                 </div>
                 <div className="text-xs text-gray-500">
@@ -86,15 +98,9 @@ const ChatList = () => {
   );
 };
 
-export default ChatList;*/
+export default ChatList;
 
-// components/chat/ChatList.tsx
-// components/chat/ChatList.tsx
-// components/chat/ChatList.tsx
-// components/chat/ChatList.tsx
-"use client"
-
-import { useChat } from '@/context/ChatContext';
+{/*import { useChat } from '@/context/ChatContext';
 import { useAuth } from '@/context/AuthContext';
 import { Conversation, User } from '@/types';
 import { useEffect } from 'react';
@@ -115,7 +121,7 @@ const ChatList = () => {
 
   /*useEffect(() => {
     fetchConversations();
-  }, [fetchConversations]);*/
+  }, [fetchConversations]);*
 
   const handleSelectConversation = async (conversation: Conversation) => {
     setCurrentConversation(conversation);
@@ -193,4 +199,18 @@ const ChatList = () => {
   );
 };
 
-export default ChatList;
+export default ChatList;*/}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
