@@ -26,13 +26,6 @@ export default function Home() {
         <Hero />
         <AboutSection />
         <FeaturedCollections />
-        {/*<SpecialOffers />*
-        <DesignerShowcase />
-        <Testimonials />
-        <CelebritySpotlight />
-        <SocialMediaIntegration />
-        <NewsletterSignup />
-        <FashionBlogSection />*/}
         <CertificationsSection />
         <IndustriesServed />
         <SafetyGuidesSection />

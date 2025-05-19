@@ -387,7 +387,7 @@ const FeaturedCollectionsLight = () => {
           className="text-center mb-16"
         >
           <span className="text-xs font-semibold tracking-widest text-[#82cee4] bg-[#82cee4]/10 px-4 py-2 rounded-full inline-flex items-center gap-2">
-            <Star size={14} /> TRENDING NOW
+            <Star size={14} /> FOR YOU
           </span>
           <h2 className="mt-6 text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#82cee4] to-[#62aee4]">
@@ -395,7 +395,7 @@ const FeaturedCollectionsLight = () => {
             </span>
           </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover this season's most coveted designer pieces
+            Top-quality lab tools for precise scientific work.
           </p>
         </motion.div>
 
