@@ -220,10 +220,10 @@ const ProductCard = ({ product, onQuickView, onAddToCart, animationDelay = 0 }: 
         {/* Batch and Net Content - smaller on mobile */}
         <div className="mt-1 sm:mt-2 flex gap-1 sm:gap-2 text-xs">
           <span className="bg-gray-100 px-1.5 py-0.5 sm:px-2 sm:py-1 rounded text-xs">
-            Batch: <span className="font-medium">{product.batchNumber}</span>
+            Batch: <span className="font-medium text-gray-600">{product.batchNumber}</span>
           </span>
           <span className="bg-gray-100 px-1.5 py-0.5 sm:px-2 sm:py-1 rounded text-xs">
-            Net: <span className="font-medium">{product.netContent}</span>
+            Net: <span className="font-medium text-gray-600">{product.netContent}</span>
           </span>
         </div>
 
@@ -231,8 +231,8 @@ const ProductCard = ({ product, onQuickView, onAddToCart, animationDelay = 0 }: 
         <div className="mt-2 sm:mt-3 grid grid-cols-1 xs:grid-cols-2 gap-1 sm:gap-2 text-xs sm:text-sm">
           {product.details.slice(0, 2).map((detail, index) => (
             <div key={index} className="truncate">
-              <p className="text-gray-500 text-xs sm:text-sm">{detail.name}</p>
-              <p className="font-medium truncate text-xs sm:text-sm">{detail.value}</p>
+              <p className="text-gray-700 text-xs sm:text-sm">{detail.name}</p>
+              <p className="font-medium truncate text-xs sm:text-sm text-gray-700">{detail.value}</p>
             </div>
           ))}
         </div>

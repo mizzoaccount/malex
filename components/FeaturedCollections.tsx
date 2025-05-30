@@ -186,7 +186,7 @@ const FeaturedCollectionsLight = () => {
   }
 
   return (
-    <section className="py-20 bg-white px-4 sm:px-6 lg:px-8">
+    <section className="py-3 bg-white px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -194,17 +194,17 @@ const FeaturedCollectionsLight = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-4"
         >
           <span className="text-xs font-semibold tracking-widest text-[#82cee4] bg-[#82cee4]/10 px-4 py-2 rounded-full inline-flex items-center gap-2">
             FOR YOU
           </span>
-          <h2 className="mt-6 text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+          <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#82cee4] to-[#62aee4]">
               Featured Chemical Products
             </span>
           </h2>
-          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">
             High-quality chemicals for your laboratory needs
           </p>
         </motion.div>

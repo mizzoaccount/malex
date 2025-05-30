@@ -1,4 +1,4 @@
-"use client";
+/*"use client";
 
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -54,7 +54,7 @@ const AboutSection = () => {
 
   return (
     <section className="relative py-20 bg-white text-gray-900 overflow-hidden">
-      {/* Floating molecules background */}
+    
       <div className="absolute inset-0 opacity-10">
         {[...Array(15)].map((_, i) => (
           <motion.div
@@ -94,7 +94,7 @@ const AboutSection = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {/* Left Column - Image with decorative elements */}
+       
           <motion.div className="relative" variants={itemVariants}>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img 
@@ -107,7 +107,7 @@ const AboutSection = () => {
               <div className="absolute inset-0 bg-blue-500/10 mix-blend-overlay"></div>
             </div>
             
-            {/* Decorative floating elements */}
+      
             <motion.div 
               className="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-blue-100 border border-blue-200"
               animate={{
@@ -134,7 +134,6 @@ const AboutSection = () => {
             />
           </motion.div>
 
-          {/* Right Column - Content */}
           <motion.div variants={itemVariants}>
             <motion.div 
               className="inline-block px-4 py-1 rounded-full bg-blue-100 border border-blue-200 mb-6"
@@ -157,7 +156,7 @@ const AboutSection = () => {
               Malex Chemical Supplies has been at the forefront of chemical distribution, providing high-quality solutions to industries countrywide. Our commitment to excellence and sustainability drives every formulation we create.
             </motion.p>
 
-            {/* Stats */}
+     
             <motion.div 
               className="grid grid-cols-3 gap-4 mb-12"
               variants={containerVariants}
@@ -176,7 +175,7 @@ const AboutSection = () => {
               ))}
             </motion.div>
 
-            {/* Features */}
+ 
             <motion.div 
               className="space-y-6"
               variants={containerVariants}
@@ -201,7 +200,6 @@ const AboutSection = () => {
         </motion.div>
       </div>
 
-      {/* Floating particles */}
       <div className="absolute inset-0 overflow-hidden opacity-20">
         {[...Array(30)].map((_, i) => (
           <motion.div
@@ -226,6 +224,176 @@ const AboutSection = () => {
             }}
           />
         ))}
+      </div>
+    </section>
+  );
+};
+
+export default AboutSection;*/
+
+"use client";
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FaFlask, FaAward, FaLeaf, FaGlobe, FaShieldAlt } from 'react-icons/fa';
+
+const AboutSection = () => {
+  const stats = [
+    { value: '20+', label: 'Years', icon: <FaAward className="text-blue-600 text-2xl" /> },
+    { value: '500+', label: 'Products', icon: <FaFlask className="text-blue-600 text-2xl" /> },
+    { value: '40+', label: 'Countries', icon: <FaGlobe className="text-blue-600 text-2xl" /> },
+  ];
+
+  const features = [
+    {
+      icon: <FaShieldAlt className="text-blue-600 text-xl" />,
+      title: "Safety First",
+      description: "Rigorous quality control and safety protocols."
+    },
+    {
+      icon: <FaLeaf className="text-blue-600 text-xl" />,
+      title: "Sustainable",
+      description: "Eco-friendly chemical alternatives."
+    },
+    {
+      icon: <FaFlask className="text-blue-600 text-xl" />,
+      title: "Innovation",
+      description: "Dedicated R&D team pushing boundaries."
+    },
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 10, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.4,
+        ease: [0.6, -0.05, 0.01, 0.99]
+      }
+    }
+  };
+
+  return (
+    <section className="relative py-3 sm:py-16 bg-white text-gray-900 overflow-hidden">
+      {/* Simplified floating molecules background */}
+      <div className="absolute inset-0 opacity-5">
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute text-blue-400"
+            style={{
+              x: Math.random() * 100,
+              y: Math.random() * 100,
+              scale: 0.3 + Math.random() * 0.3
+            }}
+          >
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
+              <circle cx="12" cy="12" r="1" />
+              <path d="M16 12l2 2m-7 0l2-2m-5-5l2-2m-2 14l2-2" />
+            </svg>
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="container mx-auto px-3 sm:px-6 relative z-10">
+        <motion.div
+          className="flex flex-col gap-10"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          {/* Image section */}
+          <motion.div className="relative" variants={itemVariants}>
+            <div className="relative rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src="https://i.pinimg.com/736x/dc/cf/47/dccf47c2bf129ee8a1c01fa649ae931b.jpg" 
+                alt="Chemical laboratory"
+                className="w-full h-auto object-cover"
+                width={600}
+                height={400}
+              />
+              <div className="absolute inset-0 bg-blue-500/10 mix-blend-overlay"></div>
+            </div>
+          </motion.div>
+
+          {/* Content section */}
+          <motion.div variants={itemVariants}>
+            <motion.div 
+              className="inline-block px-3 py-1 rounded-full bg-blue-100 border border-blue-200 mb-2"
+              variants={itemVariants}
+            >
+              <span className="text-blue-600 font-medium text-sm">About Us</span>
+            </motion.div>
+            
+            <motion.h2 
+              className="text-3xl sm:text-4xl font-bold mb-4 leading-snug"
+              variants={itemVariants}
+            >
+              Pioneering <span className="text-blue-600">Chemical Innovation</span>
+            </motion.h2>
+            
+            <motion.p 
+              className="text-base sm:text-lg text-gray-600 mb-6"
+              variants={itemVariants}
+            >
+              Providing high-quality chemical solutions with commitment to excellence and sustainability.
+            </motion.p>
+
+            {/* Stats - simplified for mobile */}
+            <motion.div 
+              className="grid grid-cols-3 gap-2 sm:gap-3 mb-8"
+              variants={containerVariants}
+            >
+              {stats.map((stat, index) => (
+                <motion.div 
+                  key={index}
+                  className="bg-blue-50 rounded-lg p-2 sm:p-3 text-center border border-blue-100"
+                  variants={itemVariants}
+                  whileHover={{ y: -3, transition: { duration: 0.2 } }}
+                >
+                  <div className="flex justify-center mb-1">{stat.icon}</div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-blue-600">{stat.value}</h3>
+                  <p className="text-xs sm:text-sm text-gray-600">{stat.label}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Features - simplified */}
+            <motion.div 
+              className="space-y-4 sm:space-y-5"
+              variants={containerVariants}
+            >
+              {features.map((feature, index) => (
+                <motion.div 
+                  key={index}
+                  className="flex items-start"
+                  variants={itemVariants}
+                >
+                  <div className="bg-blue-100 p-2 rounded-md mr-3 border border-blue-200">
+                    {feature.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-semibold mb-1 text-gray-800">{feature.title}</h3>
+                    <p className="text-sm text-gray-600">{feature.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
