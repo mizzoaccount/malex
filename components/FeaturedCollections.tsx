@@ -199,12 +199,12 @@ const FeaturedCollectionsLight = () => {
           <span className="text-xs font-semibold tracking-widest text-[#82cee4] bg-[#82cee4]/10 px-4 py-2 rounded-full inline-flex items-center gap-2">
             FOR YOU
           </span>
-          <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+          <h2 className="mt-3 text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#82cee4] to-[#62aee4]">
               Featured Chemical Products
             </span>
           </h2>
-          <p className="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-0 text-md text-gray-600 max-w-2xl mx-auto">
             High-quality chemicals for your laboratory needs
           </p>
         </motion.div>
