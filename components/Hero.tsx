@@ -1,26 +1,37 @@
-"use client";
-
-import React, { useEffect } from 'react';
+"use client"
+import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/navigation';
+import { useMediaQuery } from 'react-responsive';
 
 const Hero: React.FC = () => {
-  const router = useRouter();
+  const [isClient, setIsClient] = useState(false);
 
+  // Delay render until client-side
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const isLargeScreen = useMediaQuery({ minWidth: 1024 });
+  const router = useRouter();
   const controls = useAnimation();
   const [ref, inView] = useInView({
     threshold: 0.1,
-    triggerOnce: false
+    triggerOnce: false,
   });
 
   useEffect(() => {
     if (inView) {
       controls.start('visible');
-    } else {
-      controls.start('hidden');
     }
-  }, [controls, inView]);
+  }, [inView, controls]);
+
+  // Prevent rendering on server or small screens
+  if (!isClient || !isLargeScreen) {
+    return null;
+  }
+  // Animation variants
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -98,7 +109,7 @@ const Hero: React.FC = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
-          className="text-center md:text-left max-w-4xl mx-auto"
+          className="hidden-on-medium text-center md:text-left max-w-4xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           animate={controls}
@@ -126,7 +137,7 @@ const Hero: React.FC = () => {
             Pioneering chemical solutions that drive innovation and sustainability for tomorrow's challenges.
           </motion.p>
 
-      <motion.div 
+          <motion.div 
             variants={itemVariants}
             className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-6"
           >
@@ -134,7 +145,7 @@ const Hero: React.FC = () => {
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
-              onClick={() => router.push('/guide')}    // <--- Navigate to /guide
+              onClick={() => router.push('/guide')}
               className="relative overflow-hidden px-8 py-4 rounded-full font-semibold bg-gradient-to-r from-blue-500 to-blue-400 shadow-lg"
             >
               <span className="relative z-10">Get Started</span>
@@ -145,7 +156,7 @@ const Hero: React.FC = () => {
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
-              onClick={() => router.push('/contact')}  // <--- Navigate to /contact
+              onClick={() => router.push('/contact')}
               className="relative overflow-hidden px-8 py-4 rounded-full font-semibold bg-transparent border-2 border-white border-opacity-20 hover:border-opacity-40 transition-all duration-300"
             >
               <span className="relative z-10">Learn More</span>
