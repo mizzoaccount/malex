@@ -498,7 +498,7 @@ const ProductDetailModal = ({ product, onClose }: ProductDetailModalProps) => {
                   </div>
                 </div>
                 
-                {/* Specifications */}
+                {/* Specifications *
                 <div className="mt-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Technical Specifications</h3>
                   <div className="space-y-2 max-h-[200px] overflow-y-auto pr-2">
@@ -512,8 +512,25 @@ const ProductDetailModal = ({ product, onClose }: ProductDetailModalProps) => {
                       </div>
                     ))}
                   </div>
+                </div>*/}
+                {/* Specifications */}
+                <div className="mt-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Technical Specifications</h3>
+                  <div className="space-y-2 max-h-[200px] overflow-y-auto pr-2">
+                    {product.specifications.map((spec, index) => {
+                      if (spec.name === 'Date of Mfg' || spec.name === 'Reset Date') return null;
+                      return (
+                        <div 
+                          key={index} 
+                          className="flex justify-between py-2 border-b border-gray-100 last:border-b-0"
+                        >
+                          <span className="text-gray-600 flex-1 truncate pr-2">{spec.name}</span>
+                          <span className="font-medium text-gray-900 flex-1 truncate">{spec.value}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-
                 {/* Certifications */}
                 {product.certifications.length > 0 && (
                   <div className="mt-6">
