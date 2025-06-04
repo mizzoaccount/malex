@@ -461,8 +461,8 @@ const ProductDetailModal = ({ product, onClose }: ProductDetailModalProps) => {
                 {/* Batch and Net Content */}
                 <div className="mt-4 flex gap-4 flex-wrap">
                   <div className="min-w-[120px]">
-                    <p className="text-sm text-gray-500">Batch Number</p>
-                    <p className="font-medium">{product.batchNumber}</p>
+                    {/*<p className="text-sm text-gray-500">Batch Number</p>
+                    <p className="font-medium">{product.batchNumber}</p>*/}
                   </div>
                   <div className="min-w-[120px]">
                     <p className="text-sm text-gray-500">Net Content</p>
@@ -471,7 +471,7 @@ const ProductDetailModal = ({ product, onClose }: ProductDetailModalProps) => {
                 </div>
 
                 {/* Product Details */}
-                <div className="mt-6">
+                {/*<div className="mt-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Product Details</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {product.details.map((detail, index) => (
@@ -481,8 +481,23 @@ const ProductDetailModal = ({ product, onClose }: ProductDetailModalProps) => {
                       </div>
                     ))}
                   </div>
+                </div>*/}
+                                {/* Product Details */}
+                <div className="mt-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Product Details</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {product.details.map((detail, index) => {
+                      if (index === 1) return null; // Skip the second value
+                      return (
+                        <div key={index} className="bg-gray-50 p-3 rounded-lg">
+                          <p className="text-xs text-gray-500 uppercase tracking-wider">{detail.name}</p>
+                          <p className="font-medium mt-1 truncate">{detail.value}</p>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-
+                
                 {/* Specifications */}
                 <div className="mt-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Technical Specifications</h3>
