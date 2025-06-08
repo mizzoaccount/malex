@@ -416,7 +416,6 @@ const CollectionsPage = () => {
                       const fullProduct = products.find(p => p._id === product.id);
                       if (fullProduct) setSelectedProduct(fullProduct);
                     }}
-                    onAddToCart={() => {}}
                   />
                 ))}
               </div>
