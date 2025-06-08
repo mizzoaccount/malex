@@ -662,6 +662,11 @@ const ProfilePage = () => {
   const { products, loading, error } = useProducts();
 
   useEffect(() => {
+    
+    if (!user && !isLoading) {
+      router.push('/auth/login');
+    }
+
     if (user) {
       setFormData({
         firstName: user.firstName,

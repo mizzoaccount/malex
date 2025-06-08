@@ -34,9 +34,9 @@ export const useWishlistStore = create<WishlistState>()(
       },
     }),
     {
-      name: 'wishlist-storage', // Unique name for localStorage key
-      storage: createJSONStorage(() => localStorage), // Use localStorage
-      version: 1, // Version number for potential future migrations
+      name: 'wishlist-storage', 
+      storage: createJSONStorage(() => localStorage), 
+      version: 1, 
     }
   )
 );
